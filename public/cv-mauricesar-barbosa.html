@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mauricésar Barbosa - CV</title>
+    <style>
+      :root {
+        --ink: #111827;
+        --muted: #4b5563;
+        --line: #d9e2ee;
+        --panel: #f8fbff;
+        --accent: #0369a1;
+        --accent-soft: #e0f2fe;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: #eef5fb;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.42;
+      }
+
+      .page {
+        width: 8.5in;
+        min-height: 11in;
+        margin: 0 auto;
+        background: #fff;
+        padding: 0.62in 0.68in;
+      }
+
+      header {
+        display: grid;
+        grid-template-columns: 1.35fr 1fr;
+        gap: 22px;
+        padding-bottom: 18px;
+        border-bottom: 2px solid var(--line);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 30px;
+        letter-spacing: -0.03em;
+      }
+
+      .headline {
+        margin-top: 7px;
+        color: var(--accent);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .summary {
+        margin-top: 13px;
+        color: var(--muted);
+        font-size: 10.8px;
+      }
+
+      .contact {
+        align-self: end;
+        display: grid;
+        gap: 5px;
+        color: var(--muted);
+        font-size: 9.5px;
+        text-align: right;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 24px;
+        margin-top: 20px;
+      }
+
+      section + section {
+        margin-top: 19px;
+      }
+
+      h2 {
+        color: var(--accent);
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding-bottom: 6px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      h3 {
+        font-size: 12.2px;
+        line-height: 1.2;
+      }
+
+      .meta {
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 9.5px;
+      }
+
+      .item {
+        margin-top: 12px;
+      }
+
+      ul {
+        margin: 7px 0 0;
+        padding-left: 17px;
+      }
+
+      li {
+        margin: 3px 0;
+        color: var(--muted);
+        font-size: 10px;
+      }
+
+      .pill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 10px;
+      }
+
+      .pill {
+        border: 1px solid var(--line);
+        background: var(--panel);
+        border-radius: 999px;
+        color: var(--ink);
+        font-size: 9px;
+        padding: 4px 8px;
+      }
+
+      .card {
+        margin-top: 11px;
+        border: 1px solid var(--line);
+        background: var(--panel);
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+      .card strong {
+        display: block;
+        font-size: 10.5px;
+      }
+
+      .card span,
+      .small {
+        color: var(--muted);
+        font-size: 9.6px;
+      }
+
+      .tag {
+        display: inline-block;
+        margin-bottom: 7px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 8.7px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        padding: 4px 7px;
+        text-transform: uppercase;
+      }
+
+      .role {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .role + .role {
+        margin-top: 15px;
+        padding-top: 14px;
+        border-top: 1px solid var(--line);
+      }
+
+      .role-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 14px;
+      }
+
+      .period {
+        color: var(--accent);
+        font-size: 9.5px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .footer-note {
+        margin-top: 16px;
+        color: var(--muted);
+        font-size: 8.7px;
+        text-align: center;
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+
+        .page {
+          width: auto;
+          min-height: auto;
+          margin: 0;
+          padding: 0.52in 0.58in;
+        }
+
+        @page {
+          size: Letter;
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="page">
+      <header>
+        <div>
+          <h1>Mauricésar Barbosa</h1>
+          <p class="headline">CTO · Technical Lead · AI Researcher · Technology Educator</p>
+          <p class="summary">
+            Technology leader with a profile spanning software engineering, artificial intelligence,
+            computer vision research, product-oriented architecture and technical education.
+            Experienced in connecting strategy, engineering execution and applied innovation to
+            deliver software and AI solutions with practical impact.
+          </p>
+        </div>
+        <div class="contact">
+          <a href="mailto:mauricesarf@gmail.com">mauricesarf@gmail.com</a>
+          <a href="https://www.linkedin.com/in/mauricesar/">linkedin.com/in/mauricesar</a>
+          <a href="https://github.com/mauricesar">github.com/mauricesar</a>
+          <a href="https://www.instagram.com/mauricesarf/">instagram.com/mauricesarf</a>
+          <a href="https://steamcommunity.com/id/mauricesar/">steamcommunity.com/id/mauricesar</a>
+        </div>
+      </header>
+
+      <main>
+        <aside>
+          <section>
+            <h2>Positioning</h2>
+            <div class="card">
+              <span class="tag">Target roles</span>
+              <strong>CTO · Technical Lead · AI / Software Lead</strong>
+              <span>Leadership roles that combine architecture, product, AI and team enablement.</span>
+            </div>
+            <div class="card">
+              <span class="tag">Core domains</span>
+              <strong>Software · AI · Education · Healthcare research</strong>
+              <span>Strong fit for organizations building applied, useful and scalable technology.</span>
+            </div>
+          </section>
+
+          <section>
+            <h2>Core Stack</h2>
+            <div class="pill-list">
+              <span class="pill">React</span>
+              <span class="pill">TypeScript</span>
+              <span class="pill">Python</span>
+              <span class="pill">PyTorch</span>
+              <span class="pill">Computer Vision</span>
+              <span class="pill">Object Detection</span>
+              <span class="pill">Databases</span>
+              <span class="pill">APIs</span>
+              <span class="pill">Software Architecture</span>
+              <span class="pill">AI Strategy</span>
+            </div>
+          </section>
+
+          <section>
+            <h2>Strengths</h2>
+            <div class="card">
+              <strong>Technology leadership</strong>
+              <span>Architecture, technical direction, team mentoring and execution strategy.</span>
+            </div>
+            <div class="card">
+              <strong>Applied AI</strong>
+              <span>Machine learning, computer vision, model evaluation and healthcare-oriented research.</span>
+            </div>
+            <div class="card">
+              <strong>Education and communication</strong>
+              <span>Teaching, mentoring and translating complex technical topics into practice.</span>
+            </div>
+          </section>
+
+          <section>
+            <h2>Education</h2>
+            <div class="item">
+              <h3>Master's in Informatics</h3>
+              <p class="meta">PPGI / UFAL · In progress</p>
+              <p class="small">Research in AI and computer vision applied to healthcare.</p>
+            </div>
+            <div class="item">
+              <h3>Computer Science</h3>
+              <p class="meta">Undergraduate degree</p>
+            </div>
+            <div class="item">
+              <h3>Specializations</h3>
+              <p class="small">Artificial Intelligence, Databases, Data Science and Teaching for Technical Education.</p>
+            </div>
+          </section>
+        </aside>
+
+        <div>
+          <section>
+            <h2>Professional Experience</h2>
+
+            <div class="role">
+              <div class="role-head">
+                <div>
+                  <h3>Chief Technology Officer · Carper Solutions</h3>
+                  <p class="meta">Technology strategy, architecture and AI-driven solutions</p>
+                </div>
+                <span class="period">Current</span>
+              </div>
+              <ul>
+                <li>Leads technology strategy, software architecture and engineering direction for digital solutions.</li>
+                <li>Connects product conception, AI opportunities and scalable implementation decisions.</li>
+                <li>Supports teams and projects through technical leadership, delivery quality and innovation planning.</li>
+              </ul>
+            </div>
+
+            <div class="role">
+              <div class="role-head">
+                <div>
+                  <h3>Technical Lead · Hub FDS</h3>
+                  <p class="meta">Software, AI and education technology leadership</p>
+                </div>
+                <span class="period">Jun 2026 - Present</span>
+              </div>
+              <ul>
+                <li>Leads technical work on projects focused on education, professional training and digital transformation.</li>
+                <li>Guides architecture, implementation strategy and technical mentoring across software and AI initiatives.</li>
+                <li>Bridges product thinking, engineering practices and learning impact in educational technology contexts.</li>
+              </ul>
+            </div>
+
+            <div class="role">
+              <div class="role-head">
+                <div>
+                  <h3>Technology Instructor · SENAC Alagoas</h3>
+                  <p class="meta">Programming, web development, databases, software engineering and AI</p>
+                </div>
+                <span class="period">Current</span>
+              </div>
+              <ul>
+                <li>Trains students and professionals in practical technology skills connected to market demands.</li>
+                <li>Designs hands-on learning experiences involving software development, databases and AI concepts.</li>
+                <li>Mentors students through project-based practice, technical reasoning and employability-oriented learning.</li>
+              </ul>
+            </div>
+
+            <div class="role">
+              <div class="role-head">
+                <div>
+                  <h3>AI Researcher · PPGI / UFAL</h3>
+                  <p class="meta">Computer vision and medical image analysis</p>
+                </div>
+                <span class="period">In progress</span>
+              </div>
+              <ul>
+                <li>Researches intelligent models for medical image analysis and diagnostic support.</li>
+                <li>Works with object detection, model evaluation and computer vision workflows.</li>
+                <li>Focuses on applied research with practical relevance for healthcare technology.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h2>Selected Project Themes</h2>
+            <div class="role">
+              <h3>AI and software solutions</h3>
+              <ul>
+                <li>Digital solutions involving automation, artificial intelligence and technology transformation.</li>
+                <li>Architecture and implementation of products that connect business needs with robust engineering.</li>
+              </ul>
+            </div>
+            <div class="role">
+              <h3>Computer vision for healthcare</h3>
+              <ul>
+                <li>Research on model evaluation, object detection and medical imaging workflows.</li>
+                <li>Interest in reliable AI systems that support evidence-based decision-making.</li>
+              </ul>
+            </div>
+            <div class="role">
+              <h3>Technology for education</h3>
+              <ul>
+                <li>Software and AI solutions that strengthen professional training and learning processes.</li>
+                <li>Teaching practice that combines technical rigor, projects and real-world demands.</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <p class="footer-note">
+        CV prepared for digital portfolio use. Updated June 2026.
+      </p>
+    </article>
+  </body>
+</html>
