@@ -12,25 +12,28 @@ import {
   Skills,
   TimelineSection,
 } from "@/components/site/Sections";
+import { LanguageProvider } from "@/components/site/LanguageContext";
 
 export function App() {
   return (
-    <div className="relative min-h-screen bg-background text-foreground">
-      <Header />
-      <HeaderProgress />
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Research />
-        <Skills />
-        <Projects />
-        <Education />
-        <PersonalUniverse />
-        <TimelineSection />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="relative min-h-screen bg-background text-foreground">
+        <Header />
+        <HeaderProgress />
+        <main>
+          <Hero />
+          <About />
+          <Experience />
+          <Research />
+          <Skills />
+          <Projects />
+          <Education />
+          <PersonalUniverse />
+          <TimelineSection />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }

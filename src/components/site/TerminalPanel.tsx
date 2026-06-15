@@ -1,31 +1,70 @@
 import { motion } from "framer-motion";
 import { Atom, Cpu } from "lucide-react";
+import { pick, useLanguage } from "./LanguageContext";
 
 type TerminalPanelProps = {
   expanded?: boolean;
 };
 
+const COPY = {
+  pt: {
+    base: [
+      { c: "text-primary", t: "> inicializando mauri.system" },
+      { c: "text-muted-foreground", t: "[ok] papel: CTO · Líder Técnico · Pesquisador" },
+      { c: "text-muted-foreground", t: "[ok] stack: react · python · pytorch · postgres" },
+      { c: "text-muted-foreground", t: "[ok] pesquisa: visão computacional / imagens médicas" },
+      { c: "text-accent", t: "> treinando model.health.vision" },
+      { c: "text-cyan", t: "[net] época 42/100  loss 0.084  acc 0.962" },
+      { c: "text-muted-foreground", t: "[edu] SENAC · UFAL · Hub FDS" },
+      { c: "text-primary", t: "> status: construindo o futuro_" },
+    ],
+    extra: [
+      { c: "text-muted-foreground", t: "[lead] arquitetura · produto · times · estratégia" },
+      { c: "text-muted-foreground", t: "[ai] detecção · visão · avaliação de modelos · saúde" },
+      { c: "text-muted-foreground", t: "[teach] programação · bancos · web · IA" },
+      { c: "text-accent", t: "> sincronizando human.side" },
+      { c: "text-muted-foreground", t: "[play] estratégia · competitivo · sci-fi · Marvel" },
+      { c: "text-cyan", t: "[core] curiosidade: alta  modo_build: sempre_on" },
+      { c: "text-primary", t: "> pronto para o próximo projeto_" },
+    ],
+    metrics: [
+      ["impacto", "mundo real"],
+      ["pesquisa", "health.ai"],
+      ["modo", "builder"],
+    ],
+  },
+  en: {
+    base: [
+      { c: "text-primary", t: "> initializing mauri.system" },
+      { c: "text-muted-foreground", t: "[ok] role: CTO · Technical Lead · Researcher" },
+      { c: "text-muted-foreground", t: "[ok] stack: react · python · pytorch · postgres" },
+      { c: "text-muted-foreground", t: "[ok] research: computer vision / medical imaging" },
+      { c: "text-accent", t: "> training model.health.vision" },
+      { c: "text-cyan", t: "[net] epoch 42/100  loss 0.084  acc 0.962" },
+      { c: "text-muted-foreground", t: "[edu] SENAC · UFAL · Hub FDS" },
+      { c: "text-primary", t: "> status: building the future_" },
+    ],
+    extra: [
+      { c: "text-muted-foreground", t: "[lead] architecture · product · teams · strategy" },
+      { c: "text-muted-foreground", t: "[ai] detection · vision · model evaluation · healthcare" },
+      { c: "text-muted-foreground", t: "[teach] programming · databases · web · AI" },
+      { c: "text-accent", t: "> syncing human.side" },
+      { c: "text-muted-foreground", t: "[play] strategy · competitive games · sci-fi · Marvel" },
+      { c: "text-cyan", t: "[core] curiosity: high  build_mode: always_on" },
+      { c: "text-primary", t: "> ready for the next project_" },
+    ],
+    metrics: [
+      ["impact", "real-world"],
+      ["research", "health.ai"],
+      ["mode", "builder"],
+    ],
+  },
+};
+
 export function TerminalPanel({ expanded = false }: TerminalPanelProps) {
-  const baseLines = [
-    { c: "text-primary", t: "> initializing mauri.system" },
-    { c: "text-muted-foreground", t: "[ok] role: CTO · Technical Lead · Researcher" },
-    { c: "text-muted-foreground", t: "[ok] stack: react · python · pytorch · postgres" },
-    { c: "text-muted-foreground", t: "[ok] research: computer vision / medical imaging" },
-    { c: "text-accent", t: "> training model.health.vision" },
-    { c: "text-cyan", t: "[net] epoch 42/100  loss 0.084  acc 0.962" },
-    { c: "text-muted-foreground", t: "[edu] SENAC · UFAL · Hub FDS" },
-    { c: "text-primary", t: "> status: building the future_" },
-  ];
-  const expandedLines = [
-    { c: "text-muted-foreground", t: "[lead] architecture · product · teams · strategy" },
-    { c: "text-muted-foreground", t: "[ai] detection · vision · model evaluation · healthcare" },
-    { c: "text-muted-foreground", t: "[teach] programming · databases · web · AI" },
-    { c: "text-accent", t: "> syncing human.side" },
-    { c: "text-muted-foreground", t: "[play] strategy · competitive games · sci-fi · Marvel" },
-    { c: "text-cyan", t: "[core] curiosity: high  build_mode: always_on" },
-    { c: "text-primary", t: "> ready for the next project_" },
-  ];
-  const lines = expanded ? [...baseLines, ...expandedLines] : baseLines;
+  const { language } = useLanguage();
+  const copy = pick(language, COPY);
+  const lines = expanded ? [...copy.base, ...copy.extra] : copy.base;
 
   return (
     <div className="relative glass glow-border rounded-2xl overflow-hidden h-full">
@@ -54,11 +93,7 @@ export function TerminalPanel({ expanded = false }: TerminalPanelProps) {
         ))}
         {expanded && (
           <div className="mt-5 grid grid-cols-3 gap-2">
-            {[
-              ["impact", "real-world"],
-              ["research", "health.ai"],
-              ["mode", "builder"],
-            ].map(([label, value]) => (
+            {copy.metrics.map(([label, value]) => (
               <motion.div
                 key={label}
                 initial={{ opacity: 0, y: 8 }}

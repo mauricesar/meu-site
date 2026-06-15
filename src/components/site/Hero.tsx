@@ -1,17 +1,49 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { pick, useLanguage } from "./LanguageContext";
 import { Portrait } from "./Sections";
 
-const BADGES = [
-  "CTO @ Carper Solutions",
-  "Technical Lead @ Hub FDS",
-  "MSc candidate — PPGI/UFAL",
-  "Instructor at SENAC Alagoas",
-  "AI applied to healthcare",
-  "Software engineering",
-];
+const COPY = {
+  pt: {
+    status: "Sistema online · IA · Engenharia · Pesquisa",
+    subtitle: "CTO, líder técnico, pesquisador em IA e educador em tecnologia.",
+    description:
+      "Uno engenharia de software, inteligência artificial, pesquisa aplicada e educação para construir tecnologia inovadora, escalável e com impacto real.",
+    primary: "Conheça minha jornada",
+    secondary: "Ver projetos",
+    contact: "Fale comigo →",
+    badges: [
+      "CTO @ Carper Solutions",
+      "Líder técnico @ Hub FDS",
+      "Mestrando — PPGI/UFAL",
+      "Instrutor no SENAC Alagoas",
+      "IA aplicada à saúde",
+      "Engenharia de software",
+    ],
+  },
+  en: {
+    status: "System online · AI · Engineering · Research",
+    subtitle: "CTO, Technical Lead, AI Researcher and Technology Educator.",
+    description:
+      "I bring together software engineering, artificial intelligence, applied research and education to build innovative, scalable technology with real-world impact.",
+    primary: "Explore my journey",
+    secondary: "See projects",
+    contact: "Talk to me →",
+    badges: [
+      "CTO @ Carper Solutions",
+      "Technical Lead @ Hub FDS",
+      "MSc candidate — PPGI/UFAL",
+      "Instructor at SENAC Alagoas",
+      "AI applied to healthcare",
+      "Software engineering",
+    ],
+  },
+};
 
 export function Hero() {
+  const { language } = useLanguage();
+  const copy = pick(language, COPY);
+
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-28 pb-20 px-6 overflow-hidden">
       <div className="absolute inset-0 radial-glow" aria-hidden />
@@ -27,7 +59,7 @@ export function Hero() {
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs font-mono uppercase tracking-[0.2em] text-primary mb-7"
           >
             <Sparkles className="size-3.5" />
-            System online · AI · Engineering · Research
+            {copy.status}
           </motion.div>
 
           <motion.div
@@ -56,7 +88,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="mt-6 text-lg md:text-xl text-foreground/80 font-display"
           >
-            CTO, Technical Lead, AI Researcher and Technology Educator.
+            {copy.subtitle}
           </motion.p>
 
           <motion.p
@@ -65,8 +97,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.25 }}
             className="mt-5 max-w-2xl text-muted-foreground leading-relaxed"
           >
-            I bring together software engineering, artificial intelligence, applied research and
-            education to build innovative, scalable technology with real-world impact.
+            {copy.description}
           </motion.p>
 
           <motion.div
@@ -75,7 +106,7 @@ export function Hero() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="mt-7 flex flex-wrap gap-2"
           >
-            {BADGES.map((badge) => (
+            {copy.badges.map((badge) => (
               <span
                 key={badge}
                 className="text-xs font-mono px-3 py-1.5 rounded-full glass text-foreground/80 border border-border/60"
@@ -95,20 +126,20 @@ export function Hero() {
               href="#about"
               className="group inline-flex items-center gap-2 px-5 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:shadow-[0_0_30px_var(--primary)] transition-shadow"
             >
-              Explore my journey
+              {copy.primary}
               <ArrowRight className="size-4 group-hover:translate-x-0.5 transition-transform" />
             </a>
             <a
               href="#projects"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-full glass glow-border hover:bg-white/5 transition-colors"
             >
-              See projects
+              {copy.secondary}
             </a>
             <a
               href="#contact"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-muted-foreground hover:text-foreground transition-colors"
             >
-              Talk to me →
+              {copy.contact}
             </a>
           </motion.div>
         </div>
